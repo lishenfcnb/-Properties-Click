@@ -1,0 +1,113 @@
+*{
+    margin:0;
+    padding: 0;
+    font-family:sans-serif;
+    // 默认sans-serif字体
+    list-style: none;
+    // 清除li实心点
+    text-decoration: none;
+    // 去除下划线
+}
+.middle{
+    position: absolute;
+    // 绝对定位
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    // 平移
+}
+.menu{
+    width: 300px;
+    border-radius: 8px;
+    overflow: hidden;
+}
+.item{
+    border-top: 1px solid #2980b9;
+    overflow: hidden;
+}
+.btn{
+    display: block;
+    // 块状显示
+    padding: 16px 20px;
+    // 内边距 上下16px 左右20px
+    background: #3498db;
+    // 背景色3498bd
+    color: white;
+    // 字体颜色白色
+    position: relative;
+    // 添加相对定位 确保标签右下小三角位置
+}
+.btn:before{
+    content: "";
+    // 确认位置
+    width: 14px;
+    // 宽度14px
+    height: 14px;
+    // 高度14px
+    background: #3498db;
+    // 背景颜色蓝色 
+    position: absolute;
+    // 绝对定位
+    left: 20px;
+    // 绝对定位 左到右
+    bottom: -7px;
+    // 绝对定位下到上
+    transform: rotate(45deg);
+    // 里面旋转 把正方形变成菱形
+}
+.btn i{ //图标样式
+    margin-right: 10px;
+    // 图标右外边距10px
+}
+.smenu{ //内容样式
+    background: #333;
+    // 背景黑色
+    overflow: hidden;
+    // 溢出隐藏
+    transition: max-height 0.3s;
+    // 高度过渡效果 0.3秒
+    max-height: 0;
+    // 最小高度为0
+}
+.smenu a{ //内容a标签
+    display: block;
+    // 每个都为块状 就可以排下来
+    padding: 16px 26px;
+    // 内边距 上下16px 左右26px
+    color: white;
+    // 字体颜色白色
+    font-size: 14px;
+    // 字体大小14px
+    margin: 4px 0;
+    // 外边距 上下4px 左右0 
+    position: relative;
+}
+.smenu a:before{ //内容前面添加线条感
+    content: "";
+    // 前面空白样式
+    position: absolute;
+    // 绝对定位
+    width: 4px;
+    // 宽度4px
+    height: 100%;
+    // 高度100%
+    background: #3498db;
+    // 背景蓝色
+    left: 0;
+    // 绝对定位 左
+    top: 0;
+    // 绝对定位 上
+    transition: 0.2s;
+    // 过渡效果
+    opacity: 0;
+    // 透明度为0
+}
+.smenu a:hover:before{
+    opacity: 1;
+    // 鼠标滑过时 透明度为1
+}
+.item:target .smenu{
+    // target 打开超链接放置的地址链接
+    max-height: 10em;
+
+}
